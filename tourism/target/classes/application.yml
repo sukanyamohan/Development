@@ -1,0 +1,10 @@
+server:
+  port: 9011
+  #spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
+  #eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+spring:
+  application:
+    name: tourism-service
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER

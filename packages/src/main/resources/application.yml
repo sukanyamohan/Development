@@ -1,0 +1,9 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: package-service
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
