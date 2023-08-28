@@ -1,0 +1,7 @@
+.welcome {
+  background-color: lightgrey;
+  text-align: center;
+  align-items: center;
+  min-height: 40px;
+  font-size: 30px;
+}

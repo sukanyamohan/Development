@@ -1,0 +1,48 @@
+<p>search works!</p>
+<div id="resultPanel">
+
+</div>
+<div id="searchPanel">
+  <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
+      <label for="branchName">Branch Name</label>
+      <input type="text" name="branchName" id="branchName" formControlName="branchName">
+<!--      <div>{{ searchForm.get('branchName').value }}</div>-->
+      <label for="branchId">Branch Id</label>
+      <input type="text" name="branchId" id="branchId" formControlName="branchId">
+      <label for="place">Place</label>
+      <input type="text" name="place" id="place" formControlName="place">
+      <label for="tariff">Tariff</label>
+      <input type="text" name="tariff" id="tariff" formControlName="tariff">
+    <input type="submit" value="Search">
+  </form>
+</div>
+<div name="overview">
+  <table>
+    <thead>
+    <tr>
+      <th rowspan="2">Company Name</th>
+      <th rowspan="2">Branch Id</th>
+      <th rowspan="2">Website</th>
+      <th rowspan="2">Contact</th>
+      <th colspan="2">Packages</th>
+    </tr>
+    <tr>
+      <th>Place</th>
+      <th>Tariff</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let companyPackage of companyPackageList; let c = index;">
+    <ng-container *ngFor="let touristPackage of companyPackage?.tourismPackageList let t= index;">
+      <tr>
+        <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.branchName}}</td>
+        <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.branchId}}</td>
+        <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.website}}</td>
+        <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.contact}}</td>
+        <td>{{touristPackage.place}}</td>
+        <td>{{touristPackage.tariff}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
+

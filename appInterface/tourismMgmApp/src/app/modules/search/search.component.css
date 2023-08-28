@@ -1,0 +1,49 @@
+#resultPanel{
+  width: 80%;
+}
+
+#searchPanel{
+  width: 20%;
+}
+
+.searchCriteria{
+  padding-bottom: 10px;
+}
+
+input[type=text] {
+  width: 100%;
+  min-height: 20px;
+}
+
+table {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+}
+table
+td,
+th {
+  text-align: center;
+  padding-right: 4%;
+  border: solid grey;
+}
+table
+tbody,
+tr,
+td {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+table
+tbody,
+tr,
+div {
+  min-width: 90px;
+  padding-right: 2%;
+}
+
+td:nth-child(5), td:nth-child(6){
+  min-width: 200px;
+}
+
+

@@ -1,0 +1,34 @@
+<div id="tourismPanel">
+  <div name="overview">
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Company Name</th>
+          <th rowspan="2">Branch Id</th>
+          <th rowspan="2">Website</th>
+          <th rowspan="2">Contact</th>
+          <th colspan="2">Packages</th>
+        </tr>
+        <tr>
+          <th>Place</th>
+          <th>Tariff</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let companyPackage of companyPackageList; let c = index;">
+        <ng-container *ngFor="let touristPackage of companyPackage?.tourismPackageList let t= index;">
+          <tr>
+            <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.branchName}}</td>
+            <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.branchId}}</td>
+            <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.website}}</td>
+            <td [attr.rowspan]="companyPackage?.tourismPackageList?.length" *ngIf="t === 0">{{companyPackage?.contact}}</td>
+            <td>{{touristPackage.place}}</td>
+            <td>{{touristPackage.tariff}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div name="buttonPanel" class="btn-panel">
+    <button type="submit" class="btn" (click)="onSearchClick()"> SEARCH DATA </button>
+  </div>
+</div>
